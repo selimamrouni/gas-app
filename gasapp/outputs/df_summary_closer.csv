@@ -1,0 +1,11 @@
+,Info
+summary_distance,2.5 km
+summary_duration,6 mins
+departure_point,"4 Impasse Henri, 40000 Mont-de-Marsan, France"
+end_point,"220 D624, 40280 Saint-Pierre-du-Mont, France"
+coordinates_station,"(43.88616, -0.52008)"
+best_station_id,40280004
+cost_filling,94.74
+cost_filling_and_trip,95.15
+adjusted_cost_filling_and_trip,100.93
+gas_price,1.58

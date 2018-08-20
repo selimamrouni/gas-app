@@ -1,0 +1,9 @@
+,duration,distance,instruction,step
+0,1 min,77 m,Head <b>west</b> on <b>Impasse Henri</b> toward <b>Avenue Belle Chaumière</b>,STEP_A
+1,1 min,0.2 km,Turn <b>left</b> onto <b>Avenue Belle Chaumière</b>,STEP_B
+2,3 mins,1.3 km,Continue onto <b>Chemin de Thore</b>,STEP_C
+3,1 min,0.6 km,"Turn <b>right</b> onto <b>Avenue Pierre Mendès France</b>/<b>D634S</b><div style=""font-size:0.9em"">Continue to follow D634S</div>",STEP_D
+4,1 min,0.3 km,"At the roundabout, take the <b>2nd</b> exit",STEP_E
+5,1 min,0.4 km,Turn <b>right</b> onto <b>Avenue Camille Brettes</b>,STEP_F
+6,1 min,28 m,Turn <b>right</b> onto <b>Avenue Charles Lamarque Cando</b>,STEP_G
+7,1 min,27 m,"Turn <b>left</b><div style=""font-size:0.9em"">Destination will be on the left</div>",STEP_H

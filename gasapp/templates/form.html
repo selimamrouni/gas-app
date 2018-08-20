@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+   .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+<h1>Request Form</h1>
+<p>Hi, welcome to Gas App! Please fill the form, then let the app find the cheaper gas station adapted to you and your car in the surroundings...</p>
+<p>You can switch this example adress for your own adress. </p>
+<p>Sorry the service is supported only with French adress. Please, contact me if you want to add your country, we can work on it :)</p>
+<form action="/getinfo/" method="POST" class="form-style-9" >
+   <div class = 'form_col'>
+      <div class="row">
+         <div class="column left">
+            <h2>Adress:</h2>
+            <p> Street:
+               <input name="street" type="text" value="Place du Général Leclerc" /> 
+            </p>
+            <p> Home Number:
+               <input name="number" type="text" value="2" /> 
+            </p>
+            <p> ZIP:
+               <input name="zip" type="text" value="40000" /> 
+            </p>
+            <p> City:
+               <input name="city" type="text" value="Mont de Marsan" /> 
+            </p>
+            <p> Country:
+               <input name="country" type="text" value="France" /> 
+            </p>
+         </div>
+         <div class="column middle">
+            <h2>Driver Parameters:</h2>
+            <p>
+            <div class="" "slidecontainer">
+               <p>Maximum Beeline: <span id="output_beeline"></span> Km</p>
+               <input type="range" min="1" max="40" value="10" step="1" class="slider_beeline" id="slide_beeline" name='beeline'>
+            </div>
+            <script>
+               var slider_beeline = document.getElementById("slide_beeline");
+               var output_beeline = document.getElementById("output_beeline");
+               output_beeline.innerHTML = slide_beeline.value;
+               
+               slider_beeline.oninput = function() {
+                   output_beeline.innerHTML = this.value;
+               }
+            </script>
+            </p>
+            <p>
+            <div class="" "slidecontainer">
+               <p>Time value: <span id="output_time"></span> €/min</p>
+               <input type="range" min="0" max="2" value="0.5" step="0.1" class="slider_time" id="slide_time" name='time_value'>
+            </div>
+            <script>
+               var slider_time = document.getElementById("slide_time");
+               var output_time = document.getElementById("output_time");
+               output_time.innerHTML = slide_time.value;
+               
+               slider_time.oninput = function() {
+                   output_time.innerHTML = this.value;
+               }
+            </script>
+            </p>
+         </div>
+         <div class="column right">
+            <h2>Car Parameters:</h2>
+            <p>
+               Select Gas Type :
+               <select name="gas_type" class="styled-select" >
+                  <option value="Gazole" selected="">Gazole </option>
+                  <option value="SP95">SP95 </option>
+                  <option value="SP98">SP98</option>
+                  <option value="E10">E10 </option>
+                  <option value="GPLc">GPLc </option>
+                  <option value="E85">E85 </option>
+               </select>
+            </p>
+            <p>
+            <div class="" "slidecontainer">
+               <p>Volume of Gas needed: <span id="output_volume"></span> L</p>
+               <input type="range" min="5" max="150" value="60" step="1" class="slider_volume" id="slide_volume" name='volume'>
+            </div>
+            <script>
+               var slider_volume = document.getElementById("slide_volume");
+               var output_volume = document.getElementById("output_volume");
+               output_volume.innerHTML = slide_volume.value;
+               
+               slider_volume.oninput = function() {
+                   output_volume.innerHTML = this.value;
+               }
+            </script>
+            </p>
+            <p>
+            <div class="" "slidecontainer">
+               <p>Car Consumption: <span id="output_consumption"></span> L/100Km</p>
+               <input type="range" min="0" max="25" value="8" step="1" class="slider_consumption" id="slide_consumption" name='consumption'>
+            </div>
+            <script>
+               var slider_consumption = document.getElementById("slide_consumption");
+               var output_consumption = document.getElementById("output_consumption");
+               output_consumption.innerHTML = slide_consumption.value;
+               
+               slider_consumption.oninput = function() {
+                   output_consumption.innerHTML = this.value;
+               }
+            </script>
+            </p>
+         </div>
+      </div>
+   </div>
+   <div align="center">
+      <p>The processing can take roughly 5 seconds.</p>
+      <p>
+         <input class = 'button' type="submit" value="submit" /> 
+      </p>
+   </div>
+</form>
+{% endblock %}

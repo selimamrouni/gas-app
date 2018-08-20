@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+   .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+<div class = 'home'>
+   <h1>Home</h1>
+   <h2>Preliminary Note</h2>
+   <p>
+      Welcome to GasApp, the app which enables you to find the cheaper gas in the area with the real-time gas station prices and driving time information. <br><br></p>
+      <p>Special thanks to my Dad who inspired me for this web tool this summer 2k18. You can find my <a href= "https://medium.com/@selimamrouni/leverage-french-government-open-data-to-make-savings-on-gas-tank-filling-b09ecc68a230" target="_blank"> Medium post</a> to read the whole story. </p>
+      <p>You can go to my <a href= "https://github.com/selimamrouni" target="_blank"> GitHub</a> page to see my other projects.</p>
+      <p>Let's connect on my <a href= "https://www.linkedin.com/in/selimamrouni/" target="_blank"> LinkedIn</a>!</p>
+      <p>If you need, you can <a href="mailto:selim.amrouni@columbia.edu">Email me</a>. I'll be glad to discuss with you.</a>
+
+      <h2>How to use it?</h2>
+
+      <b>First</b> go to the form page and fill it with your informations:<br>
+      - <u>Adress</u><br>
+      - <u>Driver Parameters:</u><br>
+      - Maximum beeline is the maximum beeline you are willing to go to find your gas<br>
+      - Time value is the value you attribute to your time. This is important to know in order to find YOUR optimal gas station. A common time value is 0.5€ per minute. However, if you are in a hurry you can set it to the maximum or if you have plenty of time, you can select the minimum and the app will guide you to the cheapest station. <br>
+      - <u>Car Parameters</u><br>
+      <br>
+      <b>Then</b>, the app will propose you 3 stations:<br>
+      - The Closest: closest station to you (in driving time)<br>
+      - The Cheapest: cheapest station in your area<br>
+      - The Optimal: Optimal station given your Driver Parameters selected by the GasApp algorithm<br>
+      <br>
+      You will also see how much money $$$ you will save given your Car Parameters :).<br> 
+      <br>
+      <b>Finally</b>, select the station and let the app guides you there!<br>
+      <br>
+      Note: <br>
+      <i>- For each station, the cost of the tank filling is the real cost : Tank Filling + Gas cost for the round-trip. <br>
+      - In a first time, the App is only available for French Gas Station... Sorry for all non-French folks. I will work to add your country on request!</i>
+      <br><br>
+      Please, <b>click</b> the button to <b>enter the GasApp experience</b>...
+   <form action="/getform/" method="POST">
+      </p>
+      <input class = 'button' type="submit" value="Lauch the app" /> </p>
+   </form>
+   </p>
+</div>
+{% endblock %}

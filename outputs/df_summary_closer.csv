@@ -1,0 +1,10 @@
+,Info
+summary_distance,1.0 km
+summary_duration,4 mins
+departure_point,"15 Rue Léon Gambetta, 40000 Mont-de-Marsan, France"
+end_point,"394 D30, 40000 Mont-de-Marsan, France"
+best_station_id,40000012
+cost_filling,142.2
+cost_filling_and_trip,142.45
+adjusted_cost_filling_and_trip,146.91
+gas_price,1.42

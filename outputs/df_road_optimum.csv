@@ -1,0 +1,7 @@
+,duration,distance,instruction,step
+0,1 min,34 m,Head north on Rue Léon Gambetta toward Place du Général Leclerc,STEP_A
+1,1 min,0.2 km,Turn right onto Avenue Aristide Briand,STEP_B
+2,1 min,0.1 km,"At the roundabout, continue straight onto Allée Raymond Farbos",STEP_C
+3,1 min,0.1 km,Turn right onto Boulevard Delamarre,STEP_D
+4,1 min,0.4 km,Continue onto Rue Pierre Lisse,STEP_E
+5,1 min,0.1 km,Turn left onto Avenue Georges Clemenceau/D30,STEP_F

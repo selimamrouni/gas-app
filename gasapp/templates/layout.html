@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+   <head>
+      {% block head %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      <title>{% block title %}{% endblock %} - GasApp</title>
+      {% endblock %}
+   </head>
+   <body>
+      <div id = "head">
+
+      <div>
+      <div id="content">{% block content %}{% endblock %}</div>
+      <div id="footer">
+         {% block footer %}
+         &copy; Copyright 2018 by <a href="https://www.facebook.com/selim.amrouni">Selim Amrouni</a>.
+         {% endblock %}
+      </div>
+   </body>
+</html>

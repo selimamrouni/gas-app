@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Direction{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+   .important { color: #336699; }
+</style>
+{{mymap.js}}
+{% endblock %}
+{% block content %}
+<h1 align="center">Let's go to the Gas Station!</h1>
+<h2 align="center">Direction Map</h2>
+{{mymap.html}}
+<h2 align="center">Direction Instruction</h2>
+<table align="center">
+   {% for key, value in dict_road.items() %}
+   <tr>
+      <th> {{ key }} </th>
+      <td> {{ value }} </td>
+   </tr>
+   {% endfor %}
+</table>
+{% endblock %}

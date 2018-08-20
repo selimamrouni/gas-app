@@ -1,0 +1,10 @@
+,Info
+summary_distance,3.0 km
+summary_duration,7 mins
+departure_point,"4 Impasse Henri, 40000 Mont-de-Marsan, France"
+end_point,"6 Avenue Charles Lamarque Cando, 40280 Saint-Pierre-du-Mont, France"
+best_station_id,40280006
+cost_filling,84.3
+cost_filling_and_trip,84.78
+adjusted_cost_filling_and_trip,91.91
+gas_price,1.41

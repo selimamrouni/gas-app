@@ -1,0 +1,6 @@
+,duration,distance,instruction,step
+0,1 min,77 m,Head west on Impasse Henri toward Avenue Belle Chaumière,STEP_A
+1,1 min,0.2 km,Turn left onto Avenue Belle Chaumière,STEP_B
+2,3 mins,1.3 km,Continue onto Chemin de Thore,STEP_C
+3,1 min,0.6 km,Turn right onto Avenue Pierre Mendès France/D634S,STEP_D
+4,1 min,0.3 km,"At the roundabout, take the 1st exit onto Avenue du Corps Franc Pommies/D624",STEP_E

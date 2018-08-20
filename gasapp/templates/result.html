@@ -1,0 +1,165 @@
+
+{% extends "layout.html" %}
+{% block title %}Result{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+   .important { color: #336699; }
+</style>
+{{mymap.js}}
+{% endblock %}
+{% block content %}
+<div align="center">
+   <h1 align="center">
+      Congratulation you can save up to {{best_savings}} €!
+   </h1>
+   <p>In this section, the <b>Cheapest</b>, the <b>Closest</b> and the <b>Optimum</b> Gas Station are highlighted. Please, use these informations to select where you want to fill your tank. </p>
+   <h2>Highlighted Stations Map</h2>
+</div>
+{{mymap.html}}
+<div align="center">
+<p><i>Please, <b>click on the icons</b> to see Gas Stations informations. 
+   If less than three gas stations are ploted, then no worries ! <br>There is just over-lapping between Gas Stations, one can be both cheapest and optimum for example.<br>
+   The <b>gray</b> ones are the ones which are within the beeline distance, but neither the <b>Cheapest</b>, nor the <b>Closest</b> and nor the <b>Optimum</b>.
+   </i>
+<h2> Highlighted Gas Stations Summary</h2>
+<p>
+   <style type="text/css">
+      .tg {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border-color: #ccc;
+      }
+      .tg td {
+      font-family: Arial, sans-serif;
+      
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 0px;
+      overflow: hidden;
+      word-break: normal;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-color: #ccc;
+      color: #333;
+      background-color: #fff;
+      }
+      .tg th {
+      font-family: Arial, sans-serif;
+
+      font-weight: normal;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 0px;
+      overflow: hidden;
+      word-break: normal;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-color: #ccc;
+      color: #333;
+      background-color: #f0f0f0;
+      }
+      .tg .tg-baqh {
+      text-align: center;
+      vertical-align: top
+      font-size: 14px;
+      }
+      .tg .tg-9hbo {
+      font-weight: bold;
+      vertical-align: top
+      font-size: 14px;
+      }
+      .tg .tg-8yr7 {
+      background-color: #f9f9f9;
+      font-style: italic;
+      vertical-align: top
+      font-size: 14px;
+      }
+      .tg .tg-dzk7 {
+      background-color: #f9f9f9;
+      text-align: center;
+      vertical-align: top
+      font-size: 11px;
+      }
+      .tg .tg-dzk6 {
+      background-color: #f9f9f9;
+      text-align: center;
+      vertical-align: top
+      font-size: 14px;
+      }
+      .tg .tg-jogk {
+      font-style: italic;
+      vertical-align: top
+      font-size: 14px;
+      }
+   </style>
+<table class="tg">
+   <tr>
+      <th class="tg-9hbo">Gas Station Type</th>
+      <th class="tg-9hbo">Icon Color</th>
+      <th class="tg-9hbo">Distance</th>
+      <th class="tg-9hbo">Time To Go</th>
+      <th class="tg-9hbo">Gas Price</th>
+      <th class="tg-9hbo">Cost Filling &amp; Round Trip</th>
+      <th class="tg-9hbo">Savings</th>
+      <th class="tg-9hbo">Adress</th>
+   </tr>
+   <tr>
+      <td class="tg-8yr7">Cheapest</td>
+      <td class="tg-dzk6">Blue</td>
+      <td class="tg-dzk6">{{dic_cheapest['Distance']}} Km</td>
+      <td class="tg-dzk6">{{dic_cheapest['Time To Go']}} mins</td>
+      <td class="tg-dzk6">{{dic_cheapest['Gas Price']}} €/L</td>
+      <td class="tg-dzk6">{{dic_cheapest['Cost Tank Filling & Round-Trip']}} €</td>
+      <td class="tg-dzk6">{{dic_cheapest['savings']}} €</td>
+      <td class="tg-dzk7">{{dic_cheapest['adress_station']}}</td>
+   </tr>
+   <tr>
+      <td class="tg-8yr7">Closest</td>
+      <td class="tg-dzk6">Yellow</td>
+      <td class="tg-dzk6">{{dic_closest['Distance']}} Km</td>
+      <td class="tg-dzk6">{{dic_closest['Time To Go']}} mins</td>
+      <td class="tg-dzk6">{{dic_closest['Gas Price']}} €/L</td>
+      <td class="tg-dzk6">{{dic_closest['Cost Tank Filling & Round-Trip']}} €</td>
+      <td class="tg-dzk6">{{dic_closest['savings']}} €</td>
+      <td class="tg-dzk7">{{dic_closest['adress_station']}}</td>
+   </tr>
+
+   <tr>
+      <td class="tg-8yr7">Optimum</td>
+      <td class="tg-dzk6">Green</td>
+      <td class="tg-dzk6">{{dic_optimum['Distance']}} Km</td>
+      <td class="tg-dzk6">{{dic_optimum['Time To Go']}} mins</td>
+      <td class="tg-dzk6">{{dic_optimum['Gas Price']}} €/L</td>
+      <td class="tg-dzk6">{{dic_optimum['Cost Tank Filling & Round-Trip']}} €</td>
+      <td class="tg-dzk6">{{dic_optimum['savings']}} €</td>
+      <td class="tg-dzk7">{{dic_optimum['adress_station']}}</td>
+   </tr>
+</table>
+</p>
+<p>For information, in <i>purple</i> the <i>Most Expensive</i> is the station located at {{dic_pricest['adress_station']}} which cost you {{dic_pricest['Cost Tank Filling & Round-Trip']}} €. You can save up to <b>{{dic_cheapest['savings']}} €</b> thanks to <b>GasApp</b> by choosing the <b>Cheapest</b> station. However, regarding your <i>Driver Parameters</i>, you should opt for the <i> Optimum</i> station and save <b>{{dic_optimum['savings']}} €</b>.
+<h2>
+   <p>
+      Please select your choice of Gas Station:
+   </p>
+</h2>
+</p>
+<form action="/getdirection/" method="POST">
+   <div class="row">
+   <div class="column left">
+      <p>
+         <input class = 'button' type="submit" name='go_direction' value="Cheapest" /> 
+      </p>
+   </div>
+   <div class="column middle">
+      <p>
+         <input class = 'button' type="submit" name='go_direction' value="Closest" /> 
+      </p>
+   </div>
+   <div class="column right">
+      <p>
+         <input class = 'button' type="submit" name='go_direction' value="Optimum" /> 
+      </p>
+   </div>
+</form>
+{% endblock %}
