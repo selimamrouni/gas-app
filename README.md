@@ -2,7 +2,7 @@
 gas app web application
 
 This repository presents a [web-app](https://gas-app-usa.herokuapp.com/) developed based on a discussion with my father to help him make saving on the tank-filling. 
-Please, the app can takes some seconds to launch, this is due to Heroku which can be longer for free hosting.
+Please, the app can take some seconds to launch, this is due to Heroku which can be longer for free hosting.
 
 You can check-out my [Medium Post](https://medium.com/@selimamrouni/leverage-french-government-open-data-to-make-savings-on-gas-tank-filling-b09ecc68a230) for more information. 
 
