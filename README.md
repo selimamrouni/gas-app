@@ -16,3 +16,7 @@ The main files are:
   - output: folder in which data computed by the backend are stored
   - templates: html web pages folder
   - static: CSV files
+
+## Author
+
+* **Selim Amrouni** [selimamrouni](https://github.com/selimamrouni)
